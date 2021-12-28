@@ -1,16 +1,24 @@
-project "ImGui"
+project "yaml-cpp"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
 
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
-  objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files {
-    "include/**.h",
-    "src/**.h",
-    "src/**.c",
+		"include/**.h",
+		"src/**.h",
+		"src/**.cpp",
+	}
+	
+	includedirs {
+		"include/",
+	}
+
+	defines {
+		"YAML_CPP_STATIC_DEFINE",
 	}
 
 	filter "system:windows"
