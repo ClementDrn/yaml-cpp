@@ -5,7 +5,7 @@ project "yaml-cpp"
 	staticruntime "on"
 
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
-	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+	objdir("obj/" .. outputdir .. "/%{prj.name}")
 
 	files {
 		"include/**.h",
@@ -22,6 +22,9 @@ project "yaml-cpp"
 	}
 
 	filter "system:windows"
+		systemversion "latest"
+
+	filter "system:linux"
 		systemversion "latest"
 
 	filter "configurations:Debug"
