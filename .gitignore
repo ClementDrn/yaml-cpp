@@ -1,8 +1,10 @@
 bin/
-bin-int/
+obj/
 *.vcxproj*
 Makefile
 
 build/
 /tags
 /bazel-*
+
+Makefile
